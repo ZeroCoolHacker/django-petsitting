@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Veterinarian
+
 
 # Create your views here.
 def home(request):
@@ -11,3 +13,8 @@ def contact(request):
 
 def about(request):
     return render(request, 'pages/about.html', {})
+
+
+def veterinarians(request):
+    veterinarians = Veterinarian.objects.all()
+    return render(request, 'pages/veterinarians.html', {'veterinarians': veterinarians})
