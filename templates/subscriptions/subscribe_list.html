@@ -1,5 +1,5 @@
 {% extends template_extends %}
-
+{% load static %}
 {% load i18n %}
 
 {% block title %}Subscribe{% endblock %}
@@ -15,10 +15,10 @@
     </div>
 
     <div class="row">
-      {% for detail in details %}
+	  {% for detail in details %}
       <div class="col-md-4 ftco-animate">
             <div class="block-7">
-                <div class="img" style="background-image: url(images/pricing-1.jpg);"></div>
+                <div class="img" style="background-image: url({% get_static_prefix %}images/pricing-{{ forloop.counter }}.jpg);"></div>
                 <div class="text-center p-4">
                     <span class="excerpt d-block">{{ detail.plan }}</span>
                     <span class="price"><sup>$</sup> <span class="number">49</span> <sub>/mos</sub></span>
@@ -31,11 +31,11 @@
                       </form>
                 </div>
             </div>
-        </div>
+		</div>
       {% endfor %}
     </div>
     <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img"
-		style="background-image: url(images/bg_3.jpg);">
+		style="background-image: url({% static 'images/bg_3.jpg' %});">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row d-md-flex justify-content-end">
