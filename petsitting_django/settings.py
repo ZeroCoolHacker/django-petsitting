@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
+
+    # For Subscriptions
+    'subscriptions',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +131,13 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Django Flexible Subscription settings
+# Set your currency type
+DFS_CURRENCY_LOCALE = 'en_us'
+
+# Specify your base template file
+DFS_BASE_TEMPLATE = 'base.html'
+
+DFS_ENABLE_ADMIN = True
